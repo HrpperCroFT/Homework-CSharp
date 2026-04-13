@@ -11,8 +11,8 @@ namespace Calculator {
                 Console.Write("\n> ");
                 string? input = Console.ReadLine()?.Trim();
 
-                if (input == null) {
-                    Console.WriteLine("Error: input is null");
+                if (String.IsNullOrWhiteSpace(input)) {
+                    Console.WriteLine("Error: Input is null or empty");
                     break;
                 }
 
@@ -51,8 +51,7 @@ namespace Calculator {
                         result = num1 * num2;
                         break;
                     case "/":
-                        if (num2 == 0)
-                        {
+                        if (num2 == 0) {
                             Console.WriteLine("Error: Division by zero is not allowed.");
                             continue;
                         }
